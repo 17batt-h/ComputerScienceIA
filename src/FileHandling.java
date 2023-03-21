@@ -1,23 +1,25 @@
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class FileHandling {
     // read lines from a file
-    private static int count;
 
-    public static void fileRead(String filename){
-        try{
-            FileReader fr = new FileReader(filename);
-            BufferedReader br = new BufferedReader(fr);
+    public static ArrayList wholeFileRead(String filename) {
+        ArrayList<String> fileOutput = new ArrayList<String>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line = br.readLine();
+
             while (line != null) {
-                count++;
+                fileOutput.add(line);
                 line = br.readLine();
             }
-            } catch (IOException e){
-                e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
         }
+        return fileOutput;
     }
+
 }
