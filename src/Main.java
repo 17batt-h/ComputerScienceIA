@@ -7,9 +7,9 @@ public class Main {
         Scanner mainScanner = new Scanner(System.in);
         System.out.println("What file do you want to use: ");
         String inputFile = mainScanner.nextLine();
-        ArrayList<String> names = new ArrayList<String>();
-        names = FileHandling.wholeFileRead(inputFile);
         System.out.println("What classroom layout do you want to use: ");
         String classroomSelection = mainScanner.nextLine();
+       SeatsLayout.roomH14();
+
     }
 }
