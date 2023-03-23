@@ -6,6 +6,17 @@ public class SeatsLayout {
     //seats will be arranged differently depending on the classroom - method required for each classroom
     //needs an array of numbers to assign seats to names
 
+    public static void placeNames(){
+        ArrayList<String> names = new ArrayList<String>();
+        names = StudentNames.getNames();
+        boolean finished = false;
+        while (finished == false){
+            System.out.println("Where do you want to place this student?: " + names[i]);
+
+        }
+    }
+
+
     public static void roomH14(){
         //creates an arraylist and fills it with numbers
         ArrayList<String> seats = new ArrayList<String>();
@@ -23,7 +34,6 @@ public class SeatsLayout {
         for (int i=0;i<seats.size();i++) {
             System.out.print(seats.get(i));
         }
-        System.out.println(seats);
     }
 
 }
