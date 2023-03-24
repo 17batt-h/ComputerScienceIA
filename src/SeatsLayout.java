@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SeatsLayout {
     //each classroom has a set number of desks
@@ -10,8 +11,15 @@ public class SeatsLayout {
         ArrayList<String> names = new ArrayList<String>();
         names = StudentNames.getNames();
         boolean finished = false;
+        int i = 1;
         while (finished == false){
-            System.out.println("Where do you want to place this student?: " + names[i]);
+            System.out.println("Where do you want to place this student?: " + names.get(i));
+            int seatNum = Main.mainScanner.nextInt();
+            System.out.println("Do you want to add another student?");
+            String userAnswer = Main.mainScanner.nextLine();
+            if (userAnswer.equals("no")){
+                finished = true;
+            }
 
         }
     }
