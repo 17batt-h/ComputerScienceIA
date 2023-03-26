@@ -11,9 +11,7 @@ public class Main {
         inputFile = mainScanner.nextLine();
         System.out.println("What classroom layout do you want to use: ");
         String classroomSelection = mainScanner.nextLine();
-        //SeatsLayout.placeNames("slay.txt");
         SeatsLayout.roomH14();
         SeatsLayout.placeNames();
-
     }
 }
