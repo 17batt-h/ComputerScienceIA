@@ -9,6 +9,20 @@ public class SeatsLayout {
 
     public static ArrayList<String> seats = new ArrayList<String>();
 
+    public static void chooseClassroom(){
+        System.out.println("What classroom layout do you want to use: ");
+        String classroomSelection = Main.mainScanner.nextLine();
+        if (classroomSelection.equals("h14")){
+            roomH14();
+        } else if (classroomSelection.equals("h11")){
+            System.out.println("h11");
+        } else if (classroomSelection.equals("h12")){
+            System.out.println("h12");
+        } else if (classroomSelection.equals("h13")){
+            System.out.println("h13");
+        }
+    }
+
     public static void placeNames(){
         ArrayList<String> names = new ArrayList<String>();
         names = StudentNames.getNames();
@@ -18,7 +32,7 @@ public class SeatsLayout {
             System.out.println("Where do you want to place this student?: " + names.get(i));
             int seatNum = Main.mainScanner.nextInt();
             Main.mainScanner.nextLine();
-            seats.set(i, "[" + names.get(i) + "]");
+            seats.set(seatNum - 1, "[" + names.get(i) + "]");
             System.out.println("Do you want to add another student?");
             String userAnswer = Main.mainScanner.nextLine();
             if (userAnswer.equals("no")){
@@ -26,7 +40,6 @@ public class SeatsLayout {
             }
             i++;
         }
-        System.out.println("slay");
         for (int a=0;a<seats.size();a++) {
             System.out.print(seats.get(a));
         }
