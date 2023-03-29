@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class SeatsLayout {
     //each classroom has a set number of desks
@@ -40,9 +39,11 @@ public class SeatsLayout {
             }
             i++;
         }
+
         for (int a=0;a<seats.size();a++) {
             System.out.print(seats.get(a));
         }
+
     }
 
     public static void roomH14(){
