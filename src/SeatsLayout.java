@@ -8,7 +8,7 @@ public class SeatsLayout {
 
     public static ArrayList<String> seats = new ArrayList<String>();
 
-    public static void chooseClassroom(){
+    /*public static void chooseClassroom(){
         System.out.println("What classroom layout do you want to use: ");
         String classroomSelection = Main.mainScanner.nextLine();
         if (classroomSelection.equals("h14")){
@@ -20,7 +20,7 @@ public class SeatsLayout {
         } else if (classroomSelection.equals("h13")){
             System.out.println("h13");
         }
-    }
+    }*/
 
     public static void placeNames(){
         ArrayList<String> names = new ArrayList<String>();

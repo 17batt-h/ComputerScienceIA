@@ -9,7 +9,7 @@ public class Main {
         mainScanner = new Scanner(System.in);
         System.out.println("What file do you want to use: ");
         inputFile = mainScanner.nextLine();
-        SeatsLayout.chooseClassroom();
+        SeatsLayout.roomH14();
         SeatsLayout.placeNames();
     }
 }
