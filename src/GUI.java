@@ -26,6 +26,7 @@ public class GUI extends JPanel implements ActionListener {
             DesksScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             DeskLayout deskLayout = new DeskLayout();
             DesksScreen.add(deskLayout);
+            DesksScreen.getContentPane().setBackground(Color.RED);
             DesksScreen.setVisible(true);
         } else {
             System.out.println("hey");
