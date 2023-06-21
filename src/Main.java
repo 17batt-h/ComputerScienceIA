@@ -17,5 +17,6 @@ public class Main {
         slay.pack();
         slay.setVisible(true);
 
+
     }
 }

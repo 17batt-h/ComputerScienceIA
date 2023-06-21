@@ -4,11 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DeskLayout extends JPanel {
-    private static final int DESK_WIDTH = 80;  // Width of each desk
-    private static final int DESK_HEIGHT = 40;  // Height of each desk
-    private static final int SPACING = 20;  // Spacing between desks
+    private static final int DESK_WIDTH = 80;
+    private static final int DESK_HEIGHT = 40;
+    private static final int SPACING = 20;
 
-    private int numDesks = 6;  // Number of desks
+    private int numDesks = 6;
 
     @Override
     public void paintComponent(Graphics g) {

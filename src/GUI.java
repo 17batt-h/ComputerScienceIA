@@ -3,9 +3,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class GUI extends JPanel implements ActionListener {
     JButton button1;
     JButton button2;
+
+    DeskLayout currentDesks = new DeskLayout();
 
     public GUI(int width, int height) {
         this.setPreferredSize(new Dimension(width, height));
@@ -22,12 +25,12 @@ public class GUI extends JPanel implements ActionListener {
 
     public void actionPerformed(ActionEvent e){
         if (e.getActionCommand().equals("Create new seating plan")){
-            JFrame DesksScreen = new JFrame("Seating Plan Editor");
+            DeskLayout.DrawDesks();
+            /*JFrame DesksScreen = new JFrame("Seating Plan Editor");
             DesksScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             DeskLayout deskLayout = new DeskLayout();
             DesksScreen.add(deskLayout);
-            DesksScreen.getContentPane().setBackground(Color.RED);
-            DesksScreen.setVisible(true);
+            DesksScreen.setVisible(true);*/
         } else {
             System.out.println("hey");
         }
