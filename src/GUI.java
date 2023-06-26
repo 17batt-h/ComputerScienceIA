@@ -26,11 +26,6 @@ public class GUI extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e){
         if (e.getActionCommand().equals("Create new seating plan")){
             DeskLayout.DrawDesks();
-            /*JFrame DesksScreen = new JFrame("Seating Plan Editor");
-            DesksScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            DeskLayout deskLayout = new DeskLayout();
-            DesksScreen.add(deskLayout);
-            DesksScreen.setVisible(true);*/
         } else {
             System.out.println("hey");
         }

@@ -18,7 +18,6 @@ public class DeskLayout extends JPanel {
 
     public DeskLayout (){
         try {
-            // Load the image from a file
             backgroundImage = ImageIO.read(new File("C:\\Users\\17batt_h\\Downloads\\slayyyyy.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
@@ -51,7 +50,7 @@ public class DeskLayout extends JPanel {
     public static void DrawDesks()  {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Desk Layout");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             frame.setSize(800, 400);
             frame.setLocationRelativeTo(null);
 
