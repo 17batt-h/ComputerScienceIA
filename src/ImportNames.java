@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 //have a button that imports the names from a CSV file and displays them in a box
 //when the button is pressed the user can choose which file to read from
@@ -15,12 +16,21 @@ public class ImportNames extends JPanel implements ActionListener{
         add(importButton);
         importButton.addActionListener(this);
     }
-
-    public void actionPerformed(ActionEvent e){
-        if (e.getActionCommand().equals("Import Names")){
-            System.out.println("hi");
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            // Do something with the selected file
+            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
         } else {
-            System.out.println("hey");
+            System.out.println("File selection cancelled.");
         }
     }
+
+
+
+
 }
+

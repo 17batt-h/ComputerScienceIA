@@ -16,20 +16,11 @@ public class DeskLayout extends JPanel {
 
     private int numDesks = 6;
 
-    public DeskLayout (){
-        try {
-            backgroundImage = ImageIO.read(new File("C:\\Users\\17batt_h\\Downloads\\slayyyyy.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (backgroundImage != null) {
-            g.drawImage(backgroundImage, 0, 0,getWidth(), getHeight(),this);
-        }
+        setBackground(Color.cyan);
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();
