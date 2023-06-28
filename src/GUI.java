@@ -27,7 +27,7 @@ public class GUI extends JPanel implements ActionListener {
         if (e.getActionCommand().equals("Create new seating plan")){
             DeskLayout.DrawDesks();
         } else {
-            System.out.println("hey");
+            System.out.println("slay");
         }
     }
 

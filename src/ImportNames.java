@@ -9,9 +9,9 @@ import java.io.File;
 //display the array visually
 
 public class ImportNames extends JPanel implements ActionListener{
+    JButton importButton = new JButton("Import Names");
 
-    public ImportNames(){
-        JButton importButton = new JButton("Import Names");
+    public void ImportNames(){
         importButton.setBounds(150, 150, 300, 40);
         add(importButton);
         importButton.addActionListener(this);
@@ -27,6 +27,10 @@ public class ImportNames extends JPanel implements ActionListener{
         } else {
             System.out.println("File selection cancelled.");
         }
+    }
+
+    public JButton getImportButton(){
+        return importButton;
     }
 
 

@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class DeskLayout extends JPanel {
+    JButton importButton = new JButton("Import Names");
     private static final int DESK_WIDTH = 80;
     private static final int DESK_HEIGHT = 40;
     private static final int SPACING = 20;
@@ -16,6 +17,24 @@ public class DeskLayout extends JPanel {
 
     private int numDesks = 6;
 
+    public void ImportNames(){
+        importButton.setBounds(150, 150, 300, 40);
+        add(importButton);
+        importButton.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            // Do something with the selected file
+            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        } else {
+            System.out.println("File selection cancelled.");
+        }
+    }
 
     @Override
     public void paintComponent(Graphics g) {
@@ -31,11 +50,6 @@ public class DeskLayout extends JPanel {
             int x = startX + i * (DESK_WIDTH + SPACING);
             g.drawRect(x, startY, DESK_WIDTH, DESK_HEIGHT);
         }
-    }
-
-    public void setNumDesks(int numDesks) {
-        this.numDesks = numDesks;
-        repaint();
     }
 
     public static void DrawDesks()  {
