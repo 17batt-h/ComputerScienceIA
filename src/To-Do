@@ -1,0 +1,4 @@
+Goal; have a button that imports the names from a CSV file and displays them in a box
+//when the button is pressed the user can choose which file to read from
+// read the names from the file and add them to an array
+//display the array visually

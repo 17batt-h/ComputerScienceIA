@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class DeskLayout extends JPanel {
-    JButton importButton = new JButton("Import Names");
+public class DeskLayout extends JPanel implements ActionListener{
+    private JButton importButton;
     private static final int DESK_WIDTH = 80;
     private static final int DESK_HEIGHT = 40;
     private static final int SPACING = 20;
@@ -17,22 +17,23 @@ public class DeskLayout extends JPanel {
 
     private int numDesks = 6;
 
-    public void ImportNames(){
+    public DeskLayout() {
+        importButton = new JButton("Import Names");
         importButton.setBounds(150, 150, 300, 40);
-        add(importButton);
         importButton.addActionListener(this);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
-        JFileChooser fileChooser = new JFileChooser();
-        int returnValue = fileChooser.showOpenDialog(null);
-        if (returnValue == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = fileChooser.getSelectedFile();
-            // Do something with the selected file
-            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
-        } else {
-            System.out.println("File selection cancelled.");
+        if (e.getActionCommand().equals("Import Names")){
+            JFileChooser fileChooser = new JFileChooser();
+            int returnValue = fileChooser.showOpenDialog(null);
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                // Do something with the selected file
+                System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+            } else {
+                System.out.println("File selection cancelled.");
+            }
         }
     }
 
@@ -40,6 +41,7 @@ public class DeskLayout extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         setBackground(Color.cyan);
+        add(importButton);
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();
