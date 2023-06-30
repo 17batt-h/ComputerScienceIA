@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DeskLayout extends JPanel implements ActionListener{
     private JButton importButton;
@@ -29,8 +30,11 @@ public class DeskLayout extends JPanel implements ActionListener{
             int returnValue = fileChooser.showOpenDialog(null);
             if (returnValue == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = fileChooser.getSelectedFile();
-                // Do something with the selected file
                 System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+                ArrayList<String> yourMum = FileHandling.wholeFileRead(selectedFile.getAbsolutePath());
+                for (String i : yourMum) {
+                    System.out.println(i);
+                }
             } else {
                 System.out.println("File selection cancelled.");
             }
