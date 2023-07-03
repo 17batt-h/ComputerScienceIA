@@ -1,11 +1,8 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class DeskLayout extends JPanel implements ActionListener{
@@ -13,8 +10,6 @@ public class DeskLayout extends JPanel implements ActionListener{
     private static final int DESK_WIDTH = 80;
     private static final int DESK_HEIGHT = 40;
     private static final int SPACING = 20;
-
-    private BufferedImage backgroundImage;
 
     private int numDesks = 6;
 
@@ -32,8 +27,12 @@ public class DeskLayout extends JPanel implements ActionListener{
                 File selectedFile = fileChooser.getSelectedFile();
                 System.out.println("Selected file: " + selectedFile.getAbsolutePath());
                 ArrayList<String> yourMum = FileHandling.wholeFileRead(selectedFile.getAbsolutePath());
+                int counter = 0;
                 for (String i : yourMum) {
                     System.out.println(i);
+                    counter++;
+                    JLabel label = new JLabel("newName" + counter);
+                    label.setText(i);
                 }
             } else {
                 System.out.println("File selection cancelled.");
@@ -46,6 +45,9 @@ public class DeskLayout extends JPanel implements ActionListener{
         super.paintComponent(g);
         setBackground(Color.cyan);
         add(importButton);
+        JLabel myLabel = new JLabel();
+        myLabel.setText("hi");
+        add(myLabel);
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();
@@ -60,7 +62,7 @@ public class DeskLayout extends JPanel implements ActionListener{
 
     public static void DrawDesks()  {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Desk Layout");
+            JFrame frame = new JFrame("Seating Plan Editor");
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             frame.setSize(800, 400);
             frame.setLocationRelativeTo(null);
