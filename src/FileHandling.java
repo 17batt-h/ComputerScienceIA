@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class FileHandling {
     // read lines from a file
 
-    public static ArrayList wholeFileRead(String filename) {
+    public static ArrayList<String> wholeFileRead(String filename) {
         ArrayList<String> fileOutput = new ArrayList<String>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line = br.readLine();

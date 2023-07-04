@@ -26,9 +26,9 @@ public class DeskLayout extends JPanel implements ActionListener{
             if (returnValue == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = fileChooser.getSelectedFile();
                 System.out.println("Selected file: " + selectedFile.getAbsolutePath());
-                ArrayList<String> yourMum = FileHandling.wholeFileRead(selectedFile.getAbsolutePath());
+                ArrayList<String> studentNames = FileHandling.wholeFileRead(selectedFile.getAbsolutePath());
                 int counter = 0;
-                for (String i : yourMum) {
+                for (String i : studentNames) {
                     System.out.println(i);
                     counter++;
                     JLabel label = new JLabel("newName" + counter);
@@ -43,11 +43,10 @@ public class DeskLayout extends JPanel implements ActionListener{
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        setBackground(Color.cyan);
+        setBackground(Color.white);
         add(importButton);
         JLabel myLabel = new JLabel();
         myLabel.setText("hi");
-        add(myLabel);
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();
