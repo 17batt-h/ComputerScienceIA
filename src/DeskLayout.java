@@ -47,6 +47,7 @@ public class DeskLayout extends JPanel implements ActionListener{
         add(importButton);
         JLabel myLabel = new JLabel();
         myLabel.setText("hi");
+        add(myLabel);
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();

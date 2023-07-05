@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -17,7 +16,7 @@ public class Main {
         slay.add(myGUI);
         slay.pack();
         slay.setVisible(true);
-
-
+        String filename = "slay.txt";
+        AllStudents allStudents = new AllStudents(filename);
     }
 }
