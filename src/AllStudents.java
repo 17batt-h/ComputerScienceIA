@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class AllStudents {
-    private ArrayList<Student> studentList;
+    private ArrayList<Student> studentList = new ArrayList<>();
 
     public AllStudents(String filename){
         ArrayList<String> rawdata = FileHandling.wholeFileRead(filename);
@@ -11,7 +11,9 @@ public class AllStudents {
         for (int i =1;i < rawdata.size();i++){
             //if line begins with class list report, grab class id
             if (rawdata.get(i).startsWith("Class List Report")){
-                classCode = rawdata.get(i).substring(20);
+                int startIndex = 20;
+                int endIndex = rawdata.get(i).indexOf(" ", startIndex);
+                classCode = rawdata.get(i).substring(startIndex,endIndex);
                 System.out.println(classCode);
             }
             // if line begins with full name or male: ignore it
@@ -19,9 +21,6 @@ public class AllStudents {
                 continue;
             } else {
                 //create new student objects and add to array
-                String record = rawdata.get(i);
-                Student student = new Student(record);
-                studentList.add(student);
             }
         }
     }
