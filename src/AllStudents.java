@@ -15,12 +15,13 @@ public class AllStudents {
                 int endIndex = rawdata.get(i).indexOf(" ", startIndex);
                 classCode = rawdata.get(i).substring(startIndex,endIndex);
                 System.out.println(classCode);
-            }
-            // if line begins with full name or male: ignore it
-            if (rawdata.get(i).startsWith("Full Name") || rawdata.get(i).startsWith("Males: ")){
+                // if line begins with full name or male: ignore it
+            } else if (rawdata.get(i).startsWith("Full Name") || rawdata.get(i).startsWith("Males: ")){
                 continue;
             } else {
                 //create new student objects and add to array
+                Student newStudent = new Student(rawdata.get(i));
+                studentList.add(newStudent);
             }
         }
     }

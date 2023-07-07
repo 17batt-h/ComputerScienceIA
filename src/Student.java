@@ -17,10 +17,10 @@ public class Student {
         //parse record from input file into student
         // Akintayo, Rio	Male	No
         //split on the spaces
-        String[] fields = record.split(" ");
+        //split name field on comma
+        String[] fields = record.split("\t");
         System.out.println(fields[0]);
         System.out.println(fields[1]);
         System.out.println(fields[2]);
-        //split name field on comma
     }
 }
