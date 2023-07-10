@@ -18,9 +18,12 @@ public class Student {
         // Akintayo, Rio	Male	No
         //split on the spaces
         //split name field on comma
-        String[] fields = record.split("\t");
-        System.out.println(fields[0]);
+        String[] fields = record.split("[,\t]");
+        /*System.out.println(fields[0]);
         System.out.println(fields[1]);
         System.out.println(fields[2]);
+        System.out.println(fields[3]);*/
+        String studentDetails = ("First Name:" + fields[1] + " Last Name: " + fields[0] + " Gender: " + fields[2] + " Pupil Premium?: " + fields[3]);
+        System.out.println(studentDetails);
     }
 }
