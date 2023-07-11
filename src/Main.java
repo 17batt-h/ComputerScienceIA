@@ -16,7 +16,7 @@ public class Main {
         slay.add(myGUI);
         slay.pack();
         slay.setVisible(true);
-        String filename = "slay.txt";
-        AllStudents allStudents = new AllStudents(filename);
+        /*String filename = "slay.txt";
+        AllStudents allStudents = new AllStudents(filename);*/
     }
 }

@@ -4,6 +4,7 @@ public class Student {
     private String gender;
     private boolean pp;
     private  String teachingClass;
+    public static String nameTag;
 
     public Student(){
         firstName = "null";
@@ -24,6 +25,8 @@ public class Student {
         System.out.println(fields[2]);
         System.out.println(fields[3]);*/
         String studentDetails = ("First Name:" + fields[1] + " Last Name: " + fields[0] + " Gender: " + fields[2] + " Pupil Premium?: " + fields[3]);
+        nameTag = fields[1] + " " + fields[0];
         System.out.println(studentDetails);
+        //System.out.println(nameTag);
     }
 }
