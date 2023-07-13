@@ -9,7 +9,7 @@ public class Student {
     private boolean pp;
     private  String teachingClass;
     public static String nameTag;
-    public ArrayList<String> nameTagList = new ArrayList<>();
+    private ArrayList<String> nameTagList;
 
     public Student(){
         firstName = "null";
@@ -29,12 +29,13 @@ public class Student {
         nameTag = fields[1] + " " + fields[0];
         //nameTagList.add(nameTag);
         System.out.println(studentDetails);
-        JLabel studentNameLabels = new JLabel(nameTag);
-
+        nameTagList.add(nameTag);
         //System.out.println(nameTag);
     }
 
-    public String getNameTag(){
-        return nameTag;
+    public ArrayList<String> getNameTagList() {
+        return nameTagList;
     }
+
 }
+
