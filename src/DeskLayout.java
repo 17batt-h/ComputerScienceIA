@@ -40,6 +40,7 @@ public class DeskLayout extends JPanel implements ActionListener{
         setBackground(Color.white);
         add(importButton);
 
+
         int panelWidth = getWidth();
         int panelHeight = getHeight();
         int startX = (panelWidth - (numDesks * (DESK_WIDTH + SPACING) - SPACING)) / 2;
