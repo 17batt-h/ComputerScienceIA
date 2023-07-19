@@ -8,7 +8,7 @@ public class Student {
     private String gender;
     private boolean pp;
     private  String teachingClass;
-    public String nameTag;
+    public static String nameTag;
     public ArrayList<JLabel> nameLabels = new ArrayList<>();
 
     public Student(){
@@ -28,9 +28,11 @@ public class Student {
         String studentDetails = ("First Name:" + fields[1] + " Last Name: " + fields[0] + " Gender: " + fields[2] + " Pupil Premium?: " + fields[3]);
         nameTag = fields[1] + " " + fields[0];
         System.out.println(studentDetails);
+        System.out.println(nameTag);
+    }
 
-        JLabel label = new JLabel(nameTag);
-        nameLabels.add(label);
+    public static String getNameTag() {
+       return nameTag;
     }
 
 }
