@@ -51,7 +51,6 @@ public class DeskLayout extends JPanel implements ActionListener{
             g.drawRect(x, startY, DESK_WIDTH, DESK_HEIGHT);
         }
     }
-
     public static void DrawDesks()  {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Seating Plan Editor");
@@ -65,7 +64,5 @@ public class DeskLayout extends JPanel implements ActionListener{
             frame.setVisible(true);
         });
     }
-
-
 
 }
