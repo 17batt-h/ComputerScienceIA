@@ -10,6 +10,8 @@ public class DeskLayout extends JPanel implements ActionListener{
     private static final int DESK_WIDTH = 80;
     private static final int DESK_HEIGHT = 40;
     private static final int SPACING = 20;
+    private AllStudents allStudents;
+    private File selectedFile;
 
     private int numDesks = 6;
 
@@ -24,10 +26,10 @@ public class DeskLayout extends JPanel implements ActionListener{
             JFileChooser fileChooser = new JFileChooser();
             int returnValue = fileChooser.showOpenDialog(null);
             if (returnValue == JFileChooser.APPROVE_OPTION) {
-                File selectedFile = fileChooser.getSelectedFile();
+                selectedFile = fileChooser.getSelectedFile();
                 System.out.println("Selected file: " + selectedFile.getAbsolutePath());
                 //CALL ALLSTUDENTS HERE
-                AllStudents allStudents = new AllStudents(selectedFile.getAbsolutePath());
+                allStudents = new AllStudents(selectedFile.getAbsolutePath());
             } else {
                 System.out.println("File selection cancelled.");
             }
@@ -39,7 +41,6 @@ public class DeskLayout extends JPanel implements ActionListener{
         super.paintComponent(g);
         setBackground(Color.white);
         add(importButton);
-
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();

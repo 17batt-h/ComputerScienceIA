@@ -2,9 +2,11 @@ import java.util.ArrayList;
 
 public class AllStudents {
     private ArrayList<Student> studentList = new ArrayList<>();
+    private ArrayList<String> nameTags = new ArrayList<>();
 
     public AllStudents(String filename){
         ArrayList<String> rawdata = FileHandling.wholeFileRead(filename);
+
         String classCode = "null";
         //skip header for file
         //loop until end of file
@@ -22,7 +24,16 @@ public class AllStudents {
                 //create new student objects and add to array
                 Student newStudent = new Student(rawdata.get(i));
                 studentList.add(newStudent);
+                nameTags.add(newStudent.getNameTag());
             }
         }
+
+
+
+
     }
+    public ArrayList<String> getNameTags() {
+        return nameTags;
+    }
+
 }
