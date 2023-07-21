@@ -12,6 +12,9 @@ public class DeskLayout extends JPanel implements ActionListener{
     private static final int SPACING = 20;
     private AllStudents allStudents;
     private File selectedFile;
+    private ArrayList<JLabel> labels; // Add the labels list
+    private int x = 20;
+    private int y = 0;
 
     private int numDesks = 6;
 
@@ -19,6 +22,7 @@ public class DeskLayout extends JPanel implements ActionListener{
         importButton = new JButton("Import Names");
         importButton.setBounds(150, 150, 300, 40);
         importButton.addActionListener(this);
+        labels = new ArrayList<>(); // Initialize the labels list
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -30,6 +34,12 @@ public class DeskLayout extends JPanel implements ActionListener{
                 System.out.println("Selected file: " + selectedFile.getAbsolutePath());
                 //CALL ALLSTUDENTS HERE
                 allStudents = new AllStudents(selectedFile.getAbsolutePath());
+                //System.out.println(allStudents.getNameTags());
+                for (int tS = 0;tS<allStudents.getNameTags().size();tS++){
+                    JLabel nameLabel = new JLabel(allStudents.getNameTags().get(tS));
+                    labels.add(nameLabel); // Add the JLabel to the labels list
+                    repaint(); // Trigger repaint to show the labels
+                }
             } else {
                 System.out.println("File selection cancelled.");
             }
@@ -41,6 +51,15 @@ public class DeskLayout extends JPanel implements ActionListener{
         super.paintComponent(g);
         setBackground(Color.white);
         add(importButton);
+        JLabel tester = new JLabel("slay");
+        add(tester);
+
+        for (JLabel label : labels) {
+            //x = x+10; // Adjust the x position as needed
+            y = y+16; // Adjust the y position as needed
+            label.setBounds(x, y, label.getPreferredSize().width, label.getPreferredSize().height);
+            add(label);
+        }
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();

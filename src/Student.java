@@ -28,7 +28,7 @@ public class Student {
         String studentDetails = ("First Name:" + fields[1] + " Last Name: " + fields[0] + " Gender: " + fields[2] + " Pupil Premium?: " + fields[3]);
         nameTag = fields[1] + " " + fields[0];
         System.out.println(studentDetails);
-        System.out.println(nameTag);
+        //System.out.println(nameTag);
     }
 
     public String getNameTag() {

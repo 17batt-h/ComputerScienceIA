@@ -1,4 +1,10 @@
 Goal: have a button that imports the names from a CSV file and displays them in a box
 //when the button is pressed the user can choose which file to read from ✔️
 // read the names from the file and add them to an array ✔
-//display the array visually in the panel
+//display the array visually in the panel ✔!!!!!!
+Improvement points:
+- panel repainting too often means if user enlarges/minimises window the name labels are lost
+- maybe have a box around the names so it's tidier?
+
+Goal: make the names an object that can be dragged and dropped
+//research if this can be done using jlabels or if another component is needed
