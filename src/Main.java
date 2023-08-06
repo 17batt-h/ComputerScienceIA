@@ -16,5 +16,7 @@ public class Main {
         slay.add(myGUI);
         slay.pack();
         slay.setVisible(true);
+        DeskLayout newDeskLayout = new DeskLayout();
+        DeskLayout.DrawDesks();
     }
 }

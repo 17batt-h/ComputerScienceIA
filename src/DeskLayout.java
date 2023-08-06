@@ -14,15 +14,18 @@ public class DeskLayout extends JPanel implements ActionListener{
     private File selectedFile;
     private ArrayList<JLabel> labels; // Add the labels list
     private int x = 20;
-    private int y = 0;
-
     private int numDesks = 6;
+    public JPanel labelPanel = new JPanel(null);
 
     public DeskLayout() {
+        setLayout(new BorderLayout());
         importButton = new JButton("Import Names");
-        importButton.setBounds(150, 150, 300, 40);
         importButton.addActionListener(this);
+        add(importButton, BorderLayout.NORTH);
         labels = new ArrayList<>(); // Initialize the labels list
+        JLabel tester = new JLabel("slay");
+        add(tester);
+        add(labelPanel, BorderLayout.CENTER);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -35,11 +38,16 @@ public class DeskLayout extends JPanel implements ActionListener{
                 //CALL ALLSTUDENTS HERE
                 allStudents = new AllStudents(selectedFile.getAbsolutePath());
                 //System.out.println(allStudents.getNameTags());
-                for (int tS = 0;tS<allStudents.getNameTags().size();tS++){
+                int currentY = 150; // Y position for label placement
+                for (int tS = 0; tS < allStudents.getNameTags().size(); tS++) {
                     JLabel nameLabel = new JLabel(allStudents.getNameTags().get(tS));
-                    labels.add(nameLabel); // Add the JLabel to the labels list
-                    repaint(); // Trigger repaint to show the labels
+                    labels.add(nameLabel);
+                    nameLabel.setBounds(20, currentY, nameLabel.getPreferredSize().width, nameLabel.getPreferredSize().height);
+                    currentY=currentY+15; // Increment the y position for the next label
+                    add(nameLabel); // Add the label to the panel
                 }
+                revalidate(); // Trigger layout update to show the labels
+                repaint(); // Trigger repaint to show the labels
             } else {
                 System.out.println("File selection cancelled.");
             }
@@ -50,17 +58,8 @@ public class DeskLayout extends JPanel implements ActionListener{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         setBackground(Color.white);
-        add(importButton);
-        JLabel tester = new JLabel("slay");
-        add(tester);
 
-        for (JLabel label : labels) {
-            //x = x+10; // Adjust the x position as needed
-            y = y+16; // Adjust the y position as needed
-            label.setBounds(x, y, label.getPreferredSize().width, label.getPreferredSize().height);
-            add(label);
-        }
-
+        // Draw the desks
         int panelWidth = getWidth();
         int panelHeight = getHeight();
         int startX = (panelWidth - (numDesks * (DESK_WIDTH + SPACING) - SPACING)) / 2;
@@ -71,6 +70,15 @@ public class DeskLayout extends JPanel implements ActionListener{
             g.drawRect(x, startY, DESK_WIDTH, DESK_HEIGHT);
         }
     }
+
+    private void positionLabels() {
+        int currentY = 0; // Y position for label placement
+        for (JLabel label : labels) {
+            label.setBounds(20, currentY, label.getPreferredSize().width, label.getPreferredSize().height);
+            currentY += 16; // Increment the y position for the next label
+        }
+    }
+
     public static void DrawDesks()  {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Seating Plan Editor");
