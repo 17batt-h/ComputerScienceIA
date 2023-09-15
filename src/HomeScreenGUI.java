@@ -15,6 +15,7 @@ public class HomeScreenGUI {
         JButton createProject = createProjectButton(frame);
         createProject.setFocusable(false);
         panel.add(createProject);
+        panel.setBackground(Color.white);
 
         frame.setVisible(true);
 
@@ -22,7 +23,7 @@ public class HomeScreenGUI {
 
     public static JButton createProjectButton(JFrame frame) {
         JButton createProject = new JButton("Create New Project");
-        createProject.setBounds(10,10,10,10);
+        createProject.setBounds(10,10,300,75);
         createProject.addActionListener(e -> {
             frame.dispose();
             ProjectCreationGUI.baseScreen();
