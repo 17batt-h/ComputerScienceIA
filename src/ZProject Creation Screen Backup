@@ -19,9 +19,6 @@ public class ProjectCreationGUI {
 
         JButton importNames = importNamesButton(frame);
         panel.add(importNames);
-        JTextArea textArea = new JTextArea("slay");
-        textArea.setEditable(false); // Prevent editing
-        panel.add(textArea);
 
         frame.setVisible(true);
     }
@@ -37,8 +34,8 @@ public class ProjectCreationGUI {
                 selectedFile = fileChooser.getSelectedFile();
                 System.out.println("Selected file: " + selectedFile.getAbsolutePath());
                 allStudents = new AllStudents(selectedFile.getAbsolutePath());
-                for (int i = 0; i < allStudents.getNameTags().size(); i++) {
-                    System.out.println(allStudents.getNameTags().get(i));
+                for (int tS = 0; tS < allStudents.getNameTags().size(); tS++) {
+                    System.out.println(allStudents.getNameTags().get(tS));
                 }
             } else {
                 System.out.println("File selection cancelled.");
@@ -49,4 +46,3 @@ public class ProjectCreationGUI {
 
 
 }
-

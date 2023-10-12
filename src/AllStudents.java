@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class AllStudents {
     private ArrayList<Student> studentList = new ArrayList<>();
-    private ArrayList<String> nameTags = new ArrayList<>();
+    private static ArrayList<String> nameTags = new ArrayList<>();
 
     public AllStudents(String filename){
         ArrayList<String> rawdata = FileHandling.wholeFileRead(filename);
@@ -32,7 +32,7 @@ public class AllStudents {
 
 
     }
-    public ArrayList<String> getNameTags() {
+    public static ArrayList<String> getNameTags() {
         return nameTags;
     }
 
