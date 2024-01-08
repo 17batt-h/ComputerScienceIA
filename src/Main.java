@@ -9,15 +9,5 @@ public class Main {
 
     public static void main(String[] args) {
         HomeScreenGUI.homeScreen();
-        /*mainScanner = new Scanner(System.in);
-        JFrame slay = new JFrame("My Program");
-        slay.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GUI myGUI = new GUI(600,400);
-        myGUI.setBackground(Color.white);
-        slay.add(myGUI);
-        slay.pack();
-        slay.setVisible(true);
-        DeskLayout newDeskLayout = new DeskLayout();
-        DeskLayout.DrawDesks();*/
     }
 }
